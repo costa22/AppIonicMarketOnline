@@ -21,7 +21,10 @@ export class CartPage {
   getUsersRandom(){
     this.restProvider.getUsersRandom()
     .subscribe(
-      (data) => { this.users = data['results'] },
+      (data) => {
+        this.users = data['results'];
+        console.log(this.users)
+      },
       (error) =>{ console.error(error); }
     )
   }

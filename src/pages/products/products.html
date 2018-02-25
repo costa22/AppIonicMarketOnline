@@ -1,0 +1,14 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Total productos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      {{ product.id }}
+    </ion-item>
+  </ion-list>
+</ion-content>

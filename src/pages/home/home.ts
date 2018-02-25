@@ -11,7 +11,7 @@ export class HomePage {
   constructor(public alertCtrl: AlertController,
   app: App, menu: MenuController,
   public navCtrl: NavController,
-  public navParams: NavParams) 
+  public navParams: NavParams)
   {
 	menu.enable(true);
   }
@@ -25,11 +25,11 @@ export class HomePage {
 	gotoothers(){
 	this.navCtrl.push('OthersPage');
 	}
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
-  
+
   doAlert() {
     let alert = this.alertCtrl.create({
       title: 'Mensaje',
@@ -40,5 +40,3 @@ export class HomePage {
 	}
 
 }
-
-
