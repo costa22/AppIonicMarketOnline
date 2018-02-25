@@ -1,0 +1,20 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Usuarios Random
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+<ion-item *ngFor="let user of users">
+  <ion-card>
+    <img src="assets/imgs/1"/>
+    <div class="card-title">{{ user.login.username }}</div>
+    <div class="card-subtitle">{{user.name.title +' ' + user.name.first + ' ' + user.name.last }}</div>
+  </ion-card>
+</ion-item>
+
+</ion-content>

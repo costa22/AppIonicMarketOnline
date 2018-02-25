@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+		<div float-left>
+			Appasionante
+		</div>
+		<div float-right>
+			<ion-icon name="cart" item-start (click)="gotocart()"></ion-icon>
+		</div>
+	</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+<ion-grid>
+  <ion-row>
+	   <ion-col>
+  		<button ion-item>
+  		<ion-icon name="mic" item-start></ion-icon>
+  		Audio
+  		</button>
+    </ion-col>
+    <ion-col>
+  		<button ion-item>
+  		<ion-icon name="camera" item-start></ion-icon>
+  		Camara
+  		</button>
+    </ion-col>
+    <ion-col>
+  		<button ion-item>
+  		<ion-icon name="chatbubbles" item-start></ion-icon>
+  		Texto
+  		</button>
+    </ion-col>
+	   <ion-col>
+  		<button ion-item (click)="gotolist()">
+  		<ion-icon name="clipboard" item-start (click)="gotolist ()"></ion-icon>
+  		Mis listas
+  		</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<button ion-button block color="dark" (click)="gotoothers()"><ion-icon name='arrow-down'></ion-icon></button>
+
+</ion-content>
