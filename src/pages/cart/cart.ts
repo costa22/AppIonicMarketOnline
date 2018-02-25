@@ -27,8 +27,8 @@ export class CartPage {
   }
 
   //Numeros aleatorios
-  getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
   /*//API Users
