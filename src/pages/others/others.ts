@@ -8,23 +8,18 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'others.html',
 })
 export class OthersPage {
-  items: any[];
+  items: any[] = [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public restProvider: RestProvider
-  ) {
-    this.initializeItems();
-  }
+  ) { this.initializeItems(); }
+
   initializeItems(){
-   /*this.items = [
-      'Amsterdam',
-      'Bogota',
-    ];*/
     this.restProvider.getUsersRandom()
     .subscribe(
-      (data) => { this.items = data['results'] },
+      (data) => { this.items = data['results'];},
       (error) =>{ console.error(error); }
     )
   }
@@ -39,7 +34,7 @@ export class OthersPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.email.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
