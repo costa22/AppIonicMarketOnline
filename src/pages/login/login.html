@@ -1,27 +1,26 @@
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar color="light">
     <ion-title>Login</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
-
-<ion-item>
-	<ion-label floating>Email</ion-label>
-	<ion-input type = "text" [(ngModel)]="user.email"></ion-input>
-</ion-item>
-
-<ion-item>
-	<ion-label floating>Password</ion-label>
-	<ion-input type = "password" [(ngModel)]="user.password"></ion-input>
-</ion-item>
-
-<button ion-button (click)="login(user)">Login</button>
-<button ion-button color="light" (click)="register()">Register</button>
-
-<div>
-</div>
+<ion-card>
+    <ion-card-header>
+      Formulario Login
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list no-line>
+          <ion-item>
+              <ion-input type="text" [(ngModel)]="user.email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>
+          </ion-item>
+          <a>¿No puede entrar?Acceda Aquí</a>
+          <button ion-button block outline color="light" (click)="login(user)">Entrar</button>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

@@ -10,13 +10,17 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 
 export class LoginPage {
- 
+
 	user = {} as User;
-	
+
   constructor( private afAuth: AngularFireAuth,
   public navCtrl: NavController, public navParams: NavParams) {
   }
-  
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginPage');
+  }
+
   async login(user : User){
 	try{
 		const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email,user.password);
@@ -24,18 +28,26 @@ export class LoginPage {
 			this.navCtrl.setRoot('HomePage');
 		}
 	}
-	
+
 	catch(e){
 		console.log(e);
 	}
   }
-  
-  register(){
-	this.navCtrl.push('RegisterPage');
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  login(user: User){
+    console.log("Usuario "+user.email," Password "+user.password);
+    try{
+      if(user){
+        //Todo correcto
+        if(user.email && user.password == "admin"){
+          this.navCtrl.push('HomePage');
+        }else{
+          console.log("Validación Incorrecta");
+        }
+      }
+    }catch(e){
+      console.log(e);
+    }
   }
 
 }

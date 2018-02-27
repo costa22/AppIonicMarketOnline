@@ -6,11 +6,10 @@ export class RestProvider {
   //URL de APIs
   //apiUrl = 'https://jsonplaceholder.typicode.com';
   randomUrl = 'https://randomuser.me/api/?results=25';
-  2closetsUrl = 'https://www.2closets.com/api/products/1';
-  productsUrl = 'https://api.printful.com/products';
-  dogUrl = 'https://dog.ceo/api/breeds/image/random';
-  randomUsers ='https://randomname.de/api/';
-
+  //productsUrl = 'https://api.printful.com/products';
+  //dogUrl = 'https://dog.ceo/api/breeds/image/random';
+  //randomUsers ='https://randomname.de/api/';
+    page: string;
   constructor(public http: HttpClient) {
     console.log('RestProvider Cargado');
   }
