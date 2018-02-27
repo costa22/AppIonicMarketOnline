@@ -6,44 +6,69 @@
 			Appasionante
 		</div>
 		<div float-right>
-			<ion-icon name="cart" item-start (click)="gotocart()"></ion-icon>
+			<ion-icon name="cart" item-start (click)="goto('Cart')"></ion-icon>
 		</div>
 	</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
-
 <ion-grid>
-  <ion-row>
-	   <ion-col>
-  		<button ion-item>
-  		<ion-icon name="mic" item-start></ion-icon>
-  		Audio
-  		</button>
+  <ion-row text-center>
+	   <ion-col width-50>
+      <button ion-button color="light" large (click)="goto('Audio')">
+         <ion-icon iconlarge name="mic" item-start></ion-icon>
+      <ion-card-content>
+        Audio
+      </ion-card-content>
+    </button>
     </ion-col>
-    <ion-col>
-  		<button ion-item>
+    <ion-col width-50>
+  		<button ion-button color="light" large (click)="goto('Camara')">
   		<ion-icon name="camera" item-start></ion-icon>
-  		Camara
-  		</button>
+      <ion-card-content>
+        Camara
+      </ion-card-content>
+      </button>
     </ion-col>
-    <ion-col>
-  		<button ion-item>
+</ion-row>
+<ion-row text-center>
+    <ion-col width-50>
+  		<button ion-button color="light" large (click)="goto('Text')">
   		<ion-icon name="chatbubbles" item-start></ion-icon>
-  		Texto
-  		</button>
+      <ion-card-content>
+        Texto
+      </ion-card-content>
+      </button>
     </ion-col>
-	   <ion-col>
-  		<button ion-item (click)="gotolist()">
-  		<ion-icon name="clipboard" item-start (click)="gotolist ()"></ion-icon>
-  		Mis listas
-  		</button>
+	  <ion-col width-50>
+  		<button ion-button color="light" large>
+  		<ion-icon name="clipboard" item-start (click)="goto('List')"></ion-icon>
+      <ion-card-content>
+        Mis listas
+      </ion-card-content>
+      </button>
     </ion-col>
-  </ion-row>
+</ion-row>
+<ion-row>
+<ion-card>
+  <ion-card-header>
+    Más opciones
+  </ion-card-header>
+  <ion-card-content>
+  <ion-list no-lines>
+    <button ion-item *ngFor="let category of categories" (click)="goto(category)">
+        {{ category }}
+    </button>
+  </ion-list>
+  </ion-card-content>
+</ion-card>
+</ion-row>
+
 </ion-grid>
-
-<button ion-button block color="dark" (click)="gotoothers()"><ion-icon name='arrow-down'></ion-icon></button>
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block color="dark" (click)="goto('Others')"><ion-icon name='arrow-down'></ion-icon></button>
+  </ion-toolbar>
+</ion-footer>

@@ -8,28 +8,17 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'products.html',
 })
 export class ProductsPage {
-  products: any[] = []; 
+  products: any[] = [];
   status: string;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public restProvider: RestProvider
-  ) { this.getproducts(); }
+  ) {  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductsPage');
-  }
-
-  getproducts(){
-    this.restProvider.getproducts()
-    .subscribe(
-      (data) => {
-      this.products = data['result'];
-      console.log(this.products);
-      },
-      (error) =>{ console.error(error); }
-    )
   }
 
 }

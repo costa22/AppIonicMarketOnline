@@ -38,5 +38,12 @@ export class HomePage {
     });
     alert.present();
 	}
+  categories = [
+    'Productos','Pedidos','Promociones','Others','Mis facturas'
+  ]
+  goto($page){
+    console.log('go to '+$page);
+    this.navCtrl.push($page+'Page');
+  }
 
 }

@@ -1,48 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from "../../models/user";
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class RestProvider {
-  //URL de APIs
-  //apiUrl = 'https://jsonplaceholder.typicode.com';
+
   randomUrl = 'https://randomuser.me/api/?results=25';
-  //productsUrl = 'https://api.printful.com/products';
-  //dogUrl = 'https://dog.ceo/api/breeds/image/random';
-  //randomUsers ='https://randomname.de/api/';
+
     page: string;
-  constructor(public http: HttpClient) {
+  constructor(
+    public http: HttpClient,
+    private afAuth: AngularFireAuth) {
     console.log('RestProvider Cargado');
   }
     getUsersRandom() {
       return this.http.get(this.randomUrl);
     }
-    getproducts(){
-      return this.http.get(this.productsUrl);
+
+  loginUser(email:string, password:string) {
+      return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+        .then(user=>Promise.resolve(user))
+        .catch(err=>Promise.reject(err))
     }
-    getdogs(){
-      return this.http.get(this.dogUrl);
+    catch(e){
+      console.log(e);
     }
-
-  /*getUsers() {
-  return new Promise(resolve => {
-    this.http.get(this.apiUrl+'/users').subscribe(data => {
-      resolve(data);
-      //console.log(data);
-    }, err => {
-      console.log(err);
-    });
-  });
-}
-
-  addUser(data) {
-  return new Promise((resolve, reject) => {
-    this.http.post(this.apiUrl+'/users', JSON.stringify(data))
-      .subscribe(res => {
-        resolve(res);
-      }, (err) => {
-        reject(err);
-      });
-  });
-}*/
-
 }
