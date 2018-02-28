@@ -8,7 +8,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-  product;
 
   constructor(
     public navCtrl: NavController,

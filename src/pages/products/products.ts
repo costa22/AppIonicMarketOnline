@@ -37,6 +37,7 @@ export class ProductsPage {
       //enviar data al ModalPage con el objeto producto
       let modal = this.modalCtrl.create(ModalPage,{objeto:product});
       modal.present();
+      this.navCtrl.push('ModalPage');
   }
 
 
