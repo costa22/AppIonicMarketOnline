@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ModalController, NavParams } from 'ionic-angular';
+import { ModalController, NavParams, ModalPage } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -11,7 +11,6 @@ export class ProductsPage {
   products;
   jsonGlobal: any[];
   jsonFiltrar: any[];
-
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,9 +35,8 @@ export class ProductsPage {
   }
   gotomodal(product){
       //enviar data al ModalPage con el objeto producto
-      let profileModal = this.modalCtrl.create(ModalPage, { product });
-      profileModal.present();
-      this.navCtrl.push('ModalPage');
+      let modal = this.modalCtrl.create(ModalPage,{objeto:product});
+      modal.present();
   }
 
 
