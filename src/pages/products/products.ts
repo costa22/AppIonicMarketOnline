@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ModalController, NavParams, ModalPage } from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
+import { ModalPage } from '../modal/modal';
 
 @IonicPage()
 @Component({
@@ -34,10 +35,11 @@ export class ProductsPage {
     }
   }
   gotomodal(product){
-      //enviar data al ModalPage con el objeto producto
-      let modal = this.modalCtrl.create(ModalPage,{objeto:product});
+      let modal = this.modalCtrl.create(ModalPage, { token: product });
+      modal.onDidDismiss(data => {
+        console.log(data);
+      });
       modal.present();
-      this.navCtrl.push('ModalPage');
   }
 
 

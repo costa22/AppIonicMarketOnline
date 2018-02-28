@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-
 @IonicPage()
 @Component({
   selector: 'page-modal',
@@ -13,7 +12,7 @@ export class ModalPage {
     public navCtrl: NavController,
     public params: NavParams
   ) {
-      console.log(params.get('objeto'));
+      console.log('UserId', params.get('token'));
   }
 
   ionViewDidLoad() {

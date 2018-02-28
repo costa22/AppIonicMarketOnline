@@ -8,7 +8,7 @@
 <ion-content>
   <ion-searchbar (ionInput)="getproducts($event)" ></ion-searchbar>
   <ion-list>
-    <button ion-item (click)="gotomodal(product)" *ngFor="let product of jsonFiltrar">
+    <button ion-item (click)="gotomodal(product)" *ngFor="let product of jsonGlobal">
       {{ product.id + ' - ' + product.nombre + ' - ' +  product.precio +'€'}}
     </button>
   </ion-list>

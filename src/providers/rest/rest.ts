@@ -17,12 +17,12 @@ export class RestProvider {
       return this.http.get(this.randomUrl);
     }
 
-  loginaf(email:string, password:string) {
+  loginFB(email:string, password:string) {
       return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then(user=>Promise.resolve(user))
         .catch(err=>Promise.reject(err))
-    }
-    catch(e){
-      console.log(e);
-    }
+  }
+  catch(e){
+    console.log(e);
+  }
 }

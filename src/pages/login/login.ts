@@ -24,15 +24,7 @@ export class LoginPage {
   }
 
   loginaf(){
-    this.auth.loginaf(this.user.email,this.user.password ).then((user) => { console.log(user) })
-    .catch(err=>{
-      let alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: err.message,
-          buttons: ['Aceptar']
-      });
-      alert.present();
-    })
+    this.auth.loginFB(this.user.email,this.user.password ).then((user) => { console.log(user) })
   }
 
   login(user: User){
