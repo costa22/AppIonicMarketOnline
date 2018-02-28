@@ -24,7 +24,7 @@ export class LoginPage {
   }
 
   loginaf(){
-    this.auth.loginUser(this.user.email,this.user.password ).then((user) => { console.log(user) })
+    this.auth.loginaf(this.user.email,this.user.password ).then((user) => { console.log(user) })
     .catch(err=>{
       let alert = this.alertCtrl.create({
           title: 'Error',

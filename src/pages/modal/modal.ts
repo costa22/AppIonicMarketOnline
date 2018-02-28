@@ -14,8 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
+  product: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(product, params.get(product));
   }
 
   ionViewDidLoad() {

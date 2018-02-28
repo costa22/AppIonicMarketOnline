@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,12 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductsPage {
   products;
+  jsonGlobal: any[];
+  jsonFiltrar: any[];
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public modalCtrl: ModalController
   ){
-    this.initProducts();
+   this.jsonGlobal = this.initProducts();
+   this.jsonFiltrar = this.jsonGlobal;
   }
 
   ionViewDidLoad() {
@@ -21,20 +26,21 @@ export class ProductsPage {
   }
 
   getproducts(ev) {
-
-    this.initProducts();
+    this.jsonFiltrar;
     var val = ev.target.value;
     if (val && val.trim() != '') {
-      this.products = this.products.filter((products) => {
-        return (products.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.jsonFiltrar = this.jsonFiltrar.filter((jsonFiltrar) => {
+        return (jsonFiltrar.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
-  gotomodal($product){
-      console.log(product);
+  gotomodal(product){
       //enviar data al ModalPage con el objeto producto
+      let profileModal = this.modalCtrl.create(ModalPage, { product });
+      profileModal.present();
       this.navCtrl.push('ModalPage');
   }
+
 
   initProducts() {
     var products = [
@@ -542,7 +548,7 @@ export class ProductsPage {
      talla: 'XL',
      precio: '38'
    }];
-   console.log(products);
+   return products;
   }
 
 }
