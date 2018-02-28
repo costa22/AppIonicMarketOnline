@@ -39,7 +39,7 @@ export class HomePage {
     alert.present();
 	}
   categories = [
-    'Productos','Pedidos','Promociones','Others','Mis facturas'
+    'Products','Pedidos','Promociones','Others','Mis facturas'
   ]
   goto($page){
     console.log('go to '+$page);

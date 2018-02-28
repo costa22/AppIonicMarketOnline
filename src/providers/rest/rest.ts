@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from "../../models/user";
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
@@ -18,7 +17,7 @@ export class RestProvider {
       return this.http.get(this.randomUrl);
     }
 
-  loginUser(email:string, password:string) {
+  loginaf(email:string, password:string) {
       return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then(user=>Promise.resolve(user))
         .catch(err=>Promise.reject(err))

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Producto 10551 - Silla
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="gotoproducts()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/logo.png">
+        </ion-avatar>
+        <h2>Silla de perro</h2>
+        <p>Silla de muy buena calidad, sirve para sentarse</p>
+      </ion-item>
+      <ion-item>
+          Código
+        <ion-note item-end>
+          10551
+        </ion-note>
+      </ion-item>
+      <ion-item>
+          Nombre
+        <ion-note item-end>
+          Silla de perro
+        </ion-note>
+      </ion-item>
+      <ion-item>
+          Talla
+        <ion-note item-end>
+          XL
+        </ion-note>
+      </ion-item>
+      <ion-item>
+          Precio
+        <ion-note item-end>
+          30€
+        </ion-note>
+      </ion-item>
+  </ion-list>
+  <button ion-button full>Añadir al carro de la compra</button>
+  <button ion-button full>Añadir a mis listas</button>
+  <button ion-button color="secondary" full>Comprar</button>
+  <button ion-button color="danger" full>Cancelar</button>
+</ion-content>

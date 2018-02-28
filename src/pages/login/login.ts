@@ -23,7 +23,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  login(){
+  loginaf(){
     this.auth.loginUser(this.user.email,this.user.password ).then((user) => { console.log(user) })
     .catch(err=>{
       let alert = this.alertCtrl.create({
