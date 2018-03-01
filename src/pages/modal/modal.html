@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Producto 10551 - Silla
+      {{id}} - {{nombre}}
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="gotoproducts()">
@@ -18,31 +18,31 @@
         <ion-avatar item-start>
           <img src="assets/imgs/logo.png">
         </ion-avatar>
-        <h2>Silla de perro</h2>
-        <p>Silla de muy buena calidad, sirve para sentarse</p>
+        <h2>{{nombre}}</h2>
+        <p>{{id}} - {{nombre}} {{talla}}</p>
       </ion-item>
       <ion-item>
-          Código
+          Código Artículo
         <ion-note item-end>
-          10551
+          {{id}}
         </ion-note>
       </ion-item>
       <ion-item>
           Nombre
         <ion-note item-end>
-          Silla de perro
+          {{nombre}}
         </ion-note>
       </ion-item>
       <ion-item>
           Talla
         <ion-note item-end>
-          XL
+          {{talla}}
         </ion-note>
       </ion-item>
       <ion-item>
           Precio
         <ion-note item-end>
-          30€
+          {{precio}}€
         </ion-note>
       </ion-item>
   </ion-list>

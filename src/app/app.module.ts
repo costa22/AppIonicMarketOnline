@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
+import { ModalPage } from '../pages/modal/modal';
 
 export const firebaseconfig = {
     apiKey: "AIzaSyDneLPJsdLkjXXNvWT7_wuL67vMNoKKPNs",
@@ -20,6 +21,7 @@ export const firebaseconfig = {
 @NgModule({
   declarations: [
     MyApp,
+    ModalPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ export const firebaseconfig = {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    ModalPage
   ],
   providers: [
     StatusBar,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,12 +7,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-
+  id: number = this.params.get('id');
+  nombre: string = this.params.get('nombre');
+  color: string = this.params.get('color');
+  talla: string = this.params.get('talla');
+  precio: number = this.params.get('precio');
   constructor(
     public navCtrl: NavController,
-    public params: NavParams
+    public params: NavParams,
+    public viewc: ViewController
   ) {
-      console.log('UserId', params.get('token'));
+
   }
 
   ionViewDidLoad() {
@@ -22,4 +27,8 @@ export class ModalPage {
   gotoproducts(){
 	this.navCtrl.push('ProductsPage');
 	}
+
+  closeModal() {
+    this.viewc.dismiss();
+  }
 }

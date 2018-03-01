@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ModalController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ModalPage } from '../modal/modal';
 
 @IonicPage()
@@ -26,16 +25,17 @@ export class ProductsPage {
   }
 
   getproducts(ev) {
-    this.jsonFiltrar;
+    this.jsonFiltrar = this.jsonGlobal;
     var val = ev.target.value;
     if (val && val.trim() != '') {
-      this.jsonFiltrar = this.jsonFiltrar.filter((jsonFiltrar) => {
-        return (jsonFiltrar.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      this.jsonFiltrar = this.jsonFiltrar.filter((product) => {
+        return (product.nombre.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
   gotomodal(product){
-      let modal = this.modalCtrl.create(ModalPage, { token: product });
+      console.log(product);
+      let modal = this.modalCtrl.create(ModalPage, product);
       modal.onDidDismiss(data => {
         console.log(data);
       });
