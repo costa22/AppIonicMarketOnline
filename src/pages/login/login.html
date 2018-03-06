@@ -1,14 +1,26 @@
 <ion-header>
 
-  <ion-navbar color="light">
-    <ion-title>Login</ion-title>
+  <ion-navbar color="primary">
+    <ion-title text-center>INICIO</ion-title>
   </ion-navbar>
 
 </ion-header>
 <ion-content padding>
-<ion-card>
+  <div padding>
+    <ion-img src="../assets/imgs/logo3.png"></ion-img>
+  </div>
+    <ion-grid>
+    <ion-row align-items-center>
+      <ion-col>
+        <a>Appasionante</a>
+      </ion-col>
+    </ion-row>
+
+    <ion-row align-items-end>
+      <ion-col>
+<ion-card color="primary">
     <ion-card-header>
-      Formulario Login
+      Login
     </ion-card-header>
     <ion-card-content>
         <ion-list no-line>
@@ -18,9 +30,12 @@
           <ion-item>
               <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>
           </ion-item>
-          <a>¿No puede entrar?Acceda Aquí</a>
-          <button ion-button block outline color="light" (click)="login(user)">Entrar</button>
+          <a color="secondary">¿No puede entrar?Acceda Aquí</a>
+          <button ion-button block outline color="secondary" (click)="login(user)">Entrar</button>
         </ion-list>
       </ion-card-content>
     </ion-card>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
 </ion-content>

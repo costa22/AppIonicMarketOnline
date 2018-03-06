@@ -8,7 +8,6 @@ import { ModalPage } from '../modal/modal';
   templateUrl: 'products.html',
 })
 export class ProductsPage {
-  products;
   jsonGlobal: any[];
   jsonFiltrar: any[];
   constructor(
@@ -124,10 +123,10 @@ export class ProductsPage {
    },
    {
      id: '12',
-     nombre: 'Mesa',
+     nombre: 'Audio',
      color: 'Azul',
-     talla: 'S',
-     precio: '35'
+     talla: 'X',
+     precio: '180'
    },
    {
      id: '13',

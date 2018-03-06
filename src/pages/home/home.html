@@ -2,11 +2,11 @@
 
   <ion-navbar>
     <ion-title>
-		<div float-left>
-			Appasionante
+		<div float-left >
+			<a color="primary">Appasionante</a>
 		</div>
 		<div float-right>
-			<ion-icon name="cart" item-start (click)="goto('Cart')"></ion-icon>
+			<ion-icon color="primary" name="cart" item-start (click)="goto('Cart')"></ion-icon>
 		</div>
 	</ion-title>
   </ion-navbar>
@@ -16,7 +16,7 @@
 <ion-grid>
   <ion-row text-center>
 	   <ion-col width-50>
-      <button ion-button color="light" large (click)="goto('Audio')">
+      <button ion-button color="primary" round large (click)="goto('Audio')">
          <ion-icon iconlarge name="mic" item-start></ion-icon>
       <ion-card-content>
         Audio
@@ -24,7 +24,7 @@
     </button>
     </ion-col>
     <ion-col width-50>
-  		<button ion-button color="light" large (click)="goto('Camara')">
+  		<button ion-button color="primary" round large (click)="goto('Camara')">
   		<ion-icon name="camera" item-start></ion-icon>
       <ion-card-content>
         Camara
@@ -34,7 +34,7 @@
 </ion-row>
 <ion-row text-center>
     <ion-col width-50>
-  		<button ion-button color="light" large (click)="goto('Text')">
+  		<button ion-button color="primary" round large (click)="goto('Text')">
   		<ion-icon name="chatbubbles" item-start></ion-icon>
       <ion-card-content>
         Texto
@@ -42,7 +42,7 @@
       </button>
     </ion-col>
 	  <ion-col width-50>
-  		<button ion-button color="light" large>
+  		<button ion-button color="primary" round large>
   		<ion-icon name="clipboard" item-start (click)="goto('List')"></ion-icon>
       <ion-card-content>
         Mis listas
@@ -57,7 +57,7 @@
   </ion-card-header>
   <ion-card-content>
   <ion-list no-lines>
-    <button ion-item *ngFor="let category of categories" (click)="goto(category)">
+    <button ion-button block outline round *ngFor="let category of categories" (click)="goto(category)">
         {{ category }}
     </button>
   </ion-list>

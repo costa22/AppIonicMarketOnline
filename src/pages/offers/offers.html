@@ -1,0 +1,20 @@
+
+<ion-header>
+  <ion-navbar color="light">
+    <ion-title>
+      Usuarios Random
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+<ion-item *ngFor="let user of users">
+  <ion-card>
+    <img src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"/>
+    <div class="card-title">{{ user.login.username }}</div>
+    <div class="card-subtitle">{{user.name.title +' ' + user.name.first + ' ' + user.name.last }}</div>
+  </ion-card>
+</ion-item>
+
+</ion-content>

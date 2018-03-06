@@ -1,20 +1,43 @@
 
 <ion-header>
-  <ion-navbar color="light">
+  <ion-navbar color="primary">
     <ion-title>
-      Usuarios Random
+      Carrito
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page">
-
-<ion-item *ngFor="let user of users">
-  <ion-card>
-    <img src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"/>
-    <div class="card-title">{{ user.login.username }}</div>
-    <div class="card-subtitle">{{user.name.title +' ' + user.name.first + ' ' + user.name.last }}</div>
-  </ion-card>
-</ion-item>
-
+  <ion-item color="{{product.color}}" *ngFor="let product of products">
+    <ion-avatar item-start>
+      <img src="../assets/imgs/logo.png">
+    </ion-avatar>
+    Código: {{product.id}}
+    <div>{{product.nombre +' ' + product.color + ' ' + product.talla }}</div>
+    {{product.precio}}€
+    <button color="accept" ion-button outline item-end >Confirmar</button>
+    <button color="danger" ion-button outline item-end >Eliminar</button>
+  </ion-item>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+  <ion-row>
+    <ion-col>
+      Total
+    </ion-col>
+    <ion-col>
+      150€
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      Artículos
+    </ion-col>
+    <ion-col>
+      19
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  </ion-toolbar>
+</ion-footer>

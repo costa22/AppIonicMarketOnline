@@ -16,13 +16,25 @@ ion-input {
 
 ion-card.card {
   box-shadow: none;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  //background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
-a, p,
+/*a, p,
 ion-card-header.card-header {
   color: #fff;
+}*/
+ion-img {
+  //border: medium none;
+  border-color: black;
+  //border-radius: 30px;
+  width: 160px;
+  height: 160px;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .list > .item-block:first-child {
