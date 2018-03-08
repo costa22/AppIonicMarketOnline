@@ -12,20 +12,43 @@
   <ion-card *ngFor="let product of products">
 
   <ion-item>
-    <h2>Código: {{product.id}}</h2>
+    <ion-row>
+      <ion-col col-6>
+        <strong>Código: {{product.id}}</strong>
+      </ion-col>
+      <ion-col col-6>
+        <strong text-right>{{product.nombre}}</strong>
+      </ion-col>
+    </ion-row>
+
   </ion-item>
 
-  <img src="../assets/trixie/trixie2.jpg">
+  <img src="{{product.imagen}}">
 
   <ion-card-content>
-    <p>{{product.nombre}}</p>
-    <p>{{product.precio}}€</p>
-    <button ion-button icon-left clear small>
-      <ion-icon color="accept" name="thumbs-up"></ion-icon>
-    </button>
-    <button ion-button icon-left clear small>
-      <ion-icon name="thumbs-down"></ion-icon>
-    </button>
+    <ion-row>
+      <ion-col col-8>
+        <button ion-button icon-left clear small>
+          <div>{{product.votosup}}</div>
+          <ion-icon color="accept" name="thumbs-up"></ion-icon>
+        </button>
+        <button ion-button icon-left clear small>
+          <div>{{product.votosdown}}</div>
+          <ion-icon name="thumbs-down"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <del>{{product.precio}}€</del>
+        <p>{{product.precio}}€</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p>{{product.descripcion}}</p><br>
+        <p>Medidas: {{product.medidas}}</p>
+      </ion-col>
+    </ion-row>
+
   </ion-card-content>
   <ion-row>
     <ion-col col-auto>
@@ -35,7 +58,7 @@
     </ion-col>
     <ion-col col-auto>
       <button ion-button icon-left clear small>
-        <ion-icon isActive="false" name="heart"></ion-icon>
+        <ion-icon (tap)="tapEvent($event)" isActive="false" name="heart"></ion-icon>
       </button>
     </ion-col>
     <ion-col col-auto>
@@ -47,10 +70,10 @@
     <ion-col col-auto>
       <button ion-button icon-left clear small>
         <ion-icon color="primary" name="pricetags"></ion-icon>
-        <div color="primary">50%</div>
+        <div color="primary">{{product.porcentaje}}%</div>
       </button>
     </ion-col>
-    <ion-col col-auto>
+    <ion-col col-2>
       <button ion-button icon-left clear small>
         <ion-icon color="accept" name="time"></ion-icon>
         <ion-icon color="accept" name="checkmark"></ion-icon>

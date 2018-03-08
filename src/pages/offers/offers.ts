@@ -10,7 +10,7 @@ import { RestProvider } from '../../providers/rest/rest';
 export class OffersPage {
   products: any[];
   users: any[] = [];
-
+  public tap: number = 0;
   constructor(
     public navCtrl: NavController,
     public rest: RestProvider
