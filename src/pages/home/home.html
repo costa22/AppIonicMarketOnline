@@ -10,21 +10,22 @@
 		</div>
 	</ion-title>
   </ion-navbar>
+  
 </ion-header>
 
 <ion-content padding>
 <ion-grid>
   <ion-row text-center>
-	   <ion-col width-50>
-      <button ion-button color="primary" round large (click)="goto('Audio')">
+	   <ion-col col-6>
+      <button block ion-button color="primary" round large (click)="goto('Audio')">
          <ion-icon iconlarge name="mic" item-start></ion-icon>
       <ion-card-content>
         Audio
       </ion-card-content>
     </button>
     </ion-col>
-    <ion-col width-50>
-  		<button ion-button color="primary" round large (click)="goto('Camara')">
+    <ion-col col-6>
+  		<button block ion-button color="primary" round large (click)="goto('Camara')">
   		<ion-icon name="camera" item-start></ion-icon>
       <ion-card-content>
         Camara
@@ -33,19 +34,19 @@
     </ion-col>
 </ion-row>
 <ion-row text-center>
-    <ion-col width-50>
-  		<button ion-button color="primary" round large (click)="goto('Text')">
+    <ion-col col-6>
+  		<button block ion-button color="primary" round large (click)="goto('Text')">
   		<ion-icon name="chatbubbles" item-start></ion-icon>
       <ion-card-content>
         Texto
       </ion-card-content>
       </button>
     </ion-col>
-	  <ion-col width-50>
-  		<button ion-button color="primary" round large>
+	  <ion-col col-6>
+  		<button block ion-button color="primary" round large>
   		<ion-icon name="clipboard" item-start (click)="goto('List')"></ion-icon>
       <ion-card-content>
-        Mis listas
+        Listas
       </ion-card-content>
       </button>
     </ion-col>

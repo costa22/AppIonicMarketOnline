@@ -1,20 +1,63 @@
 
 <ion-header>
-  <ion-navbar color="light">
+  <ion-navbar color="primary">
     <ion-title>
-      Usuarios Random
+      Ofertas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="card-background-page">
 
-<ion-item *ngFor="let user of users">
-  <ion-card>
-    <img src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb"/>
-    <div class="card-title">{{ user.login.username }}</div>
-    <div class="card-subtitle">{{user.name.title +' ' + user.name.first + ' ' + user.name.last }}</div>
-  </ion-card>
-</ion-item>
+  <ion-card *ngFor="let product of products">
+
+  <ion-item>
+    <h2>Código: {{product.id}}</h2>
+  </ion-item>
+
+  <img src="../assets/trixie/trixie2.jpg">
+
+  <ion-card-content>
+    <p>{{product.nombre}}</p>
+    <p>{{product.precio}}€</p>
+    <button ion-button icon-left clear small>
+      <ion-icon color="accept" name="thumbs-up"></ion-icon>
+    </button>
+    <button ion-button icon-left clear small>
+      <ion-icon name="thumbs-down"></ion-icon>
+    </button>
+  </ion-card-content>
+  <ion-row>
+    <ion-col col-auto>
+      <button ion-button icon-left clear small>
+        <ion-icon color="{{product.color}}" name="color-fill"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-auto>
+      <button ion-button icon-left clear small>
+        <ion-icon isActive="false" name="heart"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-auto>
+      <button ion-button icon-left clear small>
+        <ion-icon name="images"></ion-icon>
+        <div>Ver</div>
+      </button>
+    </ion-col>
+    <ion-col col-auto>
+      <button ion-button icon-left clear small>
+        <ion-icon color="primary" name="pricetags"></ion-icon>
+        <div color="primary">50%</div>
+      </button>
+    </ion-col>
+    <ion-col col-auto>
+      <button ion-button icon-left clear small>
+        <ion-icon color="accept" name="time"></ion-icon>
+        <ion-icon color="accept" name="checkmark"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
 
 </ion-content>

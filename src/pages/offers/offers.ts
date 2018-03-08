@@ -8,18 +8,16 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'offers.html',
 })
 export class OffersPage {
-
+  products: any[];
   users: any[] = [];
 
   constructor(
     public navCtrl: NavController,
-    public restProvider: RestProvider
-  ) {
-    this.getUsersRandom();
-  }
+    public rest: RestProvider
+  ) { this.products = rest.initProducts(); }
 
   getUsersRandom(){
-    this.restProvider.getUsersRandom()
+    this.rest.getUsersRandom()
     .subscribe(
       (data) => {
         this.users = data['results'];
@@ -28,6 +26,7 @@ export class OffersPage {
       (error) =>{ console.error(error); }
     )
   }
+
 
   //Numeros aleatorios
 getRandomInt(min, max) {

@@ -8,15 +8,36 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-  <ion-item color="{{product.color}}" *ngFor="let product of products">
-    <ion-avatar item-start>
-      <img src="../assets/imgs/logo.png">
-    </ion-avatar>
-    Código: {{product.id}}
-    <div>{{product.nombre +' ' + product.color + ' ' + product.talla }}</div>
-    {{product.precio}}€
-    <button color="accept" ion-button outline item-end >Confirmar</button>
-    <button color="danger" ion-button outline item-end >Eliminar</button>
+  <ion-item color="black" *ngFor="let product of products">
+    <ion-grid>
+    <ion-row align-items-start>
+      <ion-col col-2>
+        <ion-avatar item-start>
+          <img src="../assets/trixie/trixie1.jpg">
+        </ion-avatar>
+      </ion-col>
+      <ion-col  col-3>
+        <small style="color: #CCC">#{{product.id}}</small><br>
+        <strong>{{product.nombre}}</strong><br>
+        <ion-icon color="{{product.color}}" name="color-fill"></ion-icon>
+      </ion-col>
+      <ion-col  col-3>
+        <button block no-padding no-margin small ion-button outline icon-left>
+          <strong>{{product.precio}}€</strong>
+        </button>
+      </ion-col>
+      <ion-col col-4>
+        <button block no-padding no-margin small color="accept" ion-button outline icon-left>
+          <ion-icon name="checkmark"></ion-icon>
+          Aceptar
+        </button>
+        <button block small color="danger" ion-button outline icon-left>
+          <ion-icon  name="close"></ion-icon>
+          Cancelar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   </ion-item>
 </ion-content>
 <ion-footer>
