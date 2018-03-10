@@ -49,5 +49,18 @@ getRandomInt(min, max) {
     alert.present();
 	}
 
+  getTotal(){
+    var total = 0;
+    for(var i = 0; i < this.products.length; i++){
+        var product = this.products[i];
+        total += (product.precio);
+    }
+    return total;
+  }
+
+  getCount(){
+    return this.products.length;
+  }
+
 
 }

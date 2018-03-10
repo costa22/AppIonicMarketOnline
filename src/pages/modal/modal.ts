@@ -12,6 +12,10 @@ export class ModalPage {
   color: string = this.params.get('color');
   talla: string = this.params.get('talla');
   precio: number = this.params.get('precio');
+  descripcion: string = this.params.get('descripcion');
+  imagen: string = this.params.get('imagen');
+  medidas: string = this.params.get('medidas');
+  
   constructor(
     public navCtrl: NavController,
     public params: NavParams,

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      {{id}} - {{nombre}}
+      #{{id}}
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="gotoproducts()">
@@ -16,10 +16,10 @@
   <ion-list>
       <ion-item>
         <ion-avatar item-start>
-          <img src="assets/imgs/logo.png">
+          <img src="{{imagen}}">
         </ion-avatar>
         <h2>{{nombre}}</h2>
-        <p>{{id}} - {{nombre}} {{talla}}</p>
+        <p>{{descripcion}}</p>
       </ion-item>
       <ion-item>
           Código Artículo
@@ -31,6 +31,12 @@
           Nombre
         <ion-note item-end>
           {{nombre}}
+        </ion-note>
+      </ion-item>
+      <ion-item>
+          Medidas
+        <ion-note item-end>
+          {{medidas}}
         </ion-note>
       </ion-item>
       <ion-item>

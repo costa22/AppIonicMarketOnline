@@ -13,7 +13,7 @@
     <ion-row align-items-start>
       <ion-col col-2>
         <ion-avatar item-start>
-          <img src="../assets/trixie/trixie1.jpg">
+          <img src="{{product.imagen}}">
         </ion-avatar>
       </ion-col>
       <ion-col  col-3>
@@ -48,7 +48,7 @@
       Total
     </ion-col>
     <ion-col>
-      150€
+      <strong>{{ getTotal() }}€</strong>
     </ion-col>
   </ion-row>
   <ion-row>
@@ -56,7 +56,7 @@
       Artículos
     </ion-col>
     <ion-col>
-      19
+      <strong>{{ getCount() }}</strong>
     </ion-col>
   </ion-row>
 </ion-grid>
