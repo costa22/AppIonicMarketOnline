@@ -1,16 +1,77 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar>
     <ion-title>
-      Búsqueda de usuarios por email
-    </ion-title>
+		<div float-left >
+			<a color="secondary">Más opciones</a>
+		</div>
+		<div float-right>
+			<ion-icon color="primary" name="build" item-start></ion-icon>
+		</div>
+	</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item.email }}
-    </ion-item>
+
+    <ion-list-header color="secondary">
+      <ion-icon name="basket"></ion-icon>
+      Productos
+    </ion-list-header>
+    <button ion-item (click)="buttonClick()">
+      Catálogo
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Ofertas
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Novedades
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Categoria
+    </button>
+
+    <ion-list-header color="secondary">
+      <ion-icon name="person"></ion-icon>
+      Usuario
+    </ion-list-header>
+    <button ion-item (click)="buttonClick()">
+      Mis compras
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Productos más comprados
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Análisis
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Puntos cliente
+    </button>
+
+    <ion-list-header color="secondary">
+      <ion-icon name="chatboxes"></ion-icon>
+      Contacta con nosotros
+    </ion-list-header>
+    <button ion-item (click)="buttonClick()">
+      Preguntas por artículo
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Propuestas
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Incidencia
+    </button>
+
+    <ion-list-header color="secondary">
+      <ion-icon name="clipboard"></ion-icon>
+      Eventos
+    </ion-list-header>
+    <button ion-item (click)="buttonClick()">
+      Ferias
+    </button>
+    <button ion-item (click)="buttonClick()">
+      Eventos propios
+    </button>
+
   </ion-list>
 </ion-content>

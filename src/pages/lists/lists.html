@@ -8,14 +8,18 @@
 </ion-header>
 
 <ion-content padding>
-<ion-list>
+  <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
       {{ item }}
+      <small text-right style="color: #CCC">12 artículos ||  </small>
+      <small text-right style="color: #CCC">2 Feb 2018</small>
     </button>
   </ion-list>
-
-<div float-right>
-<button ion-fab color="light" mini><ion-icon name="add"></ion-icon></button>
-</div>
-
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block>
+      Añadir lista
+    </button>
+  </ion-toolbar>
+</ion-footer>

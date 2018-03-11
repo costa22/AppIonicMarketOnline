@@ -1397,6 +1397,7 @@ export class RestProvider {
     "votosdown": 47
   }
 ];
+  console.log("initProducts Cargado");
    return products;
  }
 
