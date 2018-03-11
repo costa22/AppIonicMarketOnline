@@ -9,6 +9,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
 import { ModalPage } from '../pages/modal/modal';
+import { Camera } from '@ionic-native/camera';
 
 export const firebaseconfig = {
     apiKey: "AIzaSyDneLPJsdLkjXXNvWT7_wuL67vMNoKKPNs",
@@ -39,7 +40,8 @@ export const firebaseconfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+    Camera
   ]
 })
 export class AppModule {}
