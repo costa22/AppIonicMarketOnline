@@ -27,9 +27,9 @@ export const firebaseconfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-	AngularFireModule.initializeApp(firebaseconfig),
-	AngularFireAuthModule,
-  HttpClientModule
+  	AngularFireModule.initializeApp(firebaseconfig),
+  	AngularFireAuthModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
