@@ -62,5 +62,4 @@ getRandomInt(min, max) {
     return this.products.length;
   }
 
-
 }

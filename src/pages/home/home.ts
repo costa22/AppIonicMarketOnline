@@ -21,16 +21,6 @@ export class HomePage {
 	menu.enable(true);
   }
 
-	gotolist(){
-	this.navCtrl.push('ListsPage');
-	}
-	gotocart(){
-	this.navCtrl.push('CartPage');
-	}
-	gotoothers(){
-	this.navCtrl.push('OthersPage');
-	}
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }

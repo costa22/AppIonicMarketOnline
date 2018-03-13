@@ -17,12 +17,12 @@
 
 </ion-header>
 <ion-content>
-  <ion-item (click)="gotomodal(product)" *ngFor="let product of jsonFiltrar">
-    <ion-avatar item-start>
-      <img src="{{product.imagen}}">
+  <ion-item  *ngFor="let product of jsonFiltrar">
+    <ion-avatar item-start >
+      <img (click)="gotoslide(product)" src="{{product.imagen}}">
     </ion-avatar>
 
-    <ion-grid>
+    <ion-grid (click)="gotomodal(product, 'Modal')">
     <ion-row align-items-start>
       <ion-col col-3>
         <small style="color: #CCC">#{{ product.id}}</small>

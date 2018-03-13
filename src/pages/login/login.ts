@@ -42,5 +42,9 @@ export class LoginPage {
       console.log(e);
     }
   }
+  guess(){
+    this.navCtrl.push('HomePage');
+  }
+
 
 }

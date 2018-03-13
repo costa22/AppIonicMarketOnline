@@ -30,8 +30,9 @@
           <ion-item>
               <ion-input type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>
           </ion-item>
-          <a color="secondary">¿No puede entrar?Acceda Aquí</a>
+          <a color="light">¿No puede entrar?Acceda Aquí</a>
           <button ion-button block outline color="secondary" (click)="login(user)">Entrar</button>
+          <button ion-button block outline color="black" (click)="guess()">Invitado</button>
         </ion-list>
       </ion-card-content>
     </ion-card>

@@ -9,6 +9,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { RestProvider } from '../providers/rest/rest';
 import { ModalPage } from '../pages/modal/modal';
+import { SlidePage } from '../pages/slide/slide';
 import { Camera } from '@ionic-native/camera';
 
 export const firebaseconfig = {
@@ -22,7 +23,8 @@ export const firebaseconfig = {
 @NgModule({
   declarations: [
     MyApp,
-    ModalPage
+    ModalPage,
+    SlidePage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ export const firebaseconfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ModalPage
+    ModalPage,
+    SlidePage
   ],
   providers: [
     StatusBar,

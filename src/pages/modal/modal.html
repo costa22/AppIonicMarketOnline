@@ -15,7 +15,7 @@
 <ion-content>
   <ion-list>
       <ion-item>
-        <ion-avatar item-start>
+        <ion-avatar item-start (click)="gotoSlide()">
           <img src="{{imagen}}">
         </ion-avatar>
         <h2>{{nombre}}</h2>
@@ -55,5 +55,5 @@
   <button ion-button full>Añadir al carro de la compra</button>
   <button ion-button full>Añadir a mis listas</button>
   <button ion-button color="accept" full>Comprar</button>
-  <button ion-button color="danger" full>Cancelar</button>
+  <button ion-button color="danger" full (click)="gotoproducts()">Cancelar</button>
 </ion-content>

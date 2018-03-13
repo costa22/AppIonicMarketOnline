@@ -3,29 +3,26 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 @IonicPage()
 @Component({
-  selector: 'page-modal',
-  templateUrl: 'modal.html',
+  selector: 'page-slide',
+  templateUrl: 'slide.html',
 })
-export class ModalPage {
+export class SlidePage {
+
   id: number = this.params.get('id');
   nombre: string = this.params.get('nombre');
-  color: string = this.params.get('color');
-  talla: string = this.params.get('talla');
-  precio: number = this.params.get('precio');
-  descripcion: string = this.params.get('descripcion');
   imagen: string = this.params.get('imagen');
-  medidas: string = this.params.get('medidas');
+  imagen1: string = this.params.get('imagen1');
+  imagen2: string = this.params.get('imagen2');
+  imagen3: string = this.params.get('imagen3');
 
   constructor(
     public navCtrl: NavController,
     public params: NavParams,
-    public viewc: ViewController
-  ) {
-
+    public viewc: ViewController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
+    console.log('ionViewDidLoad SlidePage');
   }
 
   gotoproducts(){
@@ -35,9 +32,4 @@ export class ModalPage {
   closeModal() {
     this.viewc.dismiss();
   }
-
-  gotoSlide() {
-    this.navCtrl.push('SlidePage');
-  }
-
 }
