@@ -26,7 +26,7 @@ export class SlidePage {
   }
 
   gotoproducts(){
-	this.navCtrl.push('ProductsPage');
+	   this.navCtrl.push('ProductsPage');
 	}
 
   closeModal() {

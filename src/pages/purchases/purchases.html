@@ -1,18 +1,41 @@
-<!--
-  Generated template for the PurchasesPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>purchases</ion-title>
+    <ion-title>
+      Mis compras
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content class="outer-content">
+  <ion-item *ngFor="let factura of facturas">
+    <ion-grid>
+    <ion-row align-items-start>
+      <ion-col  col-3>
+        <button block small color="gris" ion-button outline>
+          <ion-icon name="card" color="primary"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button block small color="gris" ion-button outline>
+          <small color= "gris">{{factura.dia}} {{factura.mes}} {{factura.year}}</small><br>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button block small color="accept" ion-button outline>
+          <span color="accept">{{factura.total}}€</span>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-item>
 </ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-range min="0" max="12" pin="true" [(ngModel)]="contrast" color="primary">
+      <ion-icon range-left small name="calendar"></ion-icon>
+      <ion-icon range-right name="calendar"></ion-icon>
+    </ion-range>
+  </ion-toolbar>
+</ion-footer>

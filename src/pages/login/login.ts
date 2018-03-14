@@ -18,7 +18,7 @@ export class LoginPage {
   public navParams: NavParams,
   public auth: RestProvider) {
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
