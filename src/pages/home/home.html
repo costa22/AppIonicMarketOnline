@@ -2,12 +2,11 @@
 
   <ion-navbar>
     <ion-title>
-		<div float-left >
-			<a color="primary">Appasionante</a>
-		</div>
 		<div float-right>
+      <button block round color="primary" ion-button outline>
 			<ion-icon color="primary" name="cart" item-start (click)="goto('Cart')"></ion-icon>
-		</div>
+      </button>
+    </div>
 	</ion-title>
   </ion-navbar>
 
@@ -53,13 +52,10 @@
 </ion-row>
 <ion-row>
 <ion-card>
-  <ion-card-header>
-    Más opciones
-  </ion-card-header>
   <ion-card-content>
   <ion-list no-lines>
-    <button ion-button block outline round *ngFor="let category of categories" (click)="goto(category)">
-        {{ category }}
+    <button ion-button block outline round *ngFor="let opcion of opciones" (click)="goto(opcion)">
+        {{ opcion }}
     </button>
   </ion-list>
   </ion-card-content>
@@ -71,6 +67,26 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button block color="dark" (click)="goto('Others')"><ion-icon name='arrow-down'></ion-icon></button>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+            <button ion-button color="secondary" round (click)="goto('Notifications')">
+               <ion-icon color="primary" name="chatbubbles" item-start><small>15</small></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button round block outline (click)="goto('Others')">
+            <ion-icon color="primary" name='arrow-down'></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button outline color="secondary" round (click)="gotocall()">
+             <ion-icon name="call" color="primary" item-start></ion-icon>
+        </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   </ion-toolbar>
 </ion-footer>

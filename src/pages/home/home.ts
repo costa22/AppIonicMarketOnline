@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, MenuController, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { CallNumber } from '@ionic-native/call-number';
 
 @IonicPage()
 @Component({
@@ -14,7 +15,8 @@ export class HomePage {
   app: App, menu: MenuController,
   public navCtrl: NavController,
   public navParams: NavParams,
-  private camera: Camera
+  private camera: Camera,
+  private callNumber: CallNumber
   )
 
   {
@@ -25,6 +27,12 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
+  gotocall(){
+    this.callNumber.callNumber("18001010101", true)
+    .then(() => console.log('Launched dialer!'))
+    .catch(() => console.log('Error launching dialer'));
+  }
+
   doAlert() {
     let alert = this.alertCtrl.create({
       title: 'Mensaje',
@@ -33,8 +41,8 @@ export class HomePage {
     });
     alert.present();
 	}
-  categories = [
-    'Products','Offers','Purchases'
+  opciones = [
+    'Products','Offers','Purchases','Cart','Text','Lists'
   ]
   goto($page){
     console.log('go to '+$page);

@@ -11,6 +11,7 @@ import { RestProvider } from '../providers/rest/rest';
 import { ModalPage } from '../pages/modal/modal';
 import { SlidePage } from '../pages/slide/slide';
 import { Camera } from '@ionic-native/camera';
+import { CallNumber } from '@ionic-native/call-number';
 
 export const firebaseconfig = {
     apiKey: "AIzaSyDneLPJsdLkjXXNvWT7_wuL67vMNoKKPNs",
@@ -44,7 +45,8 @@ export const firebaseconfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
-    Camera
+    Camera,
+    CallNumber
   ]
 })
 export class AppModule {}

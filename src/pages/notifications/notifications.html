@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Notificaciones</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="card-background-page">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+          <button ion-button full block  round (click)="goto('Notifications')">
+             <ion-icon color="secondary" name="chatbubbles" item-start><small>15</small></ion-icon>
+        </button> 15 mensajes nuevos<br>
+      </ion-col>
+      <ion-col col-12>
+          <button ion-button full block round (click)="goto('Notifications')">
+             <ion-icon color="secondary" name="mic" item-start><small>2</small></ion-icon>
+        </button>2 Audios verificados
+      </ion-col>
+      <ion-col col-12>
+          <button ion-button full block round (click)="goto('Notifications')">
+             <ion-icon color="secondary" name="camera" item-start><small color="accept">6</small></ion-icon>
+        </button>5 Artículos verificados y 1 sin verificar
+      </ion-col>
+      <ion-col col-12>
+          <button ion-button full block round (click)="goto('Notifications')">
+             <ion-icon color="secondary" name="cart" item-start><small>30</small></ion-icon>
+        </button> Faltan 30 artículos por confirmar
+      </ion-col>
+      <ion-col col-12>
+          <button ion-button full block round (click)="goto('Notifications')">
+             <ion-icon color="secondary" name="clipboard" item-start><small>1</small></ion-icon>
+        </button> 1 lista nueva añadida
+      </ion-col>
+      <ion-col col-12>
+          <button ion-button full block round (click)="goto('Notifications')">
+             <ion-icon color="secondary" name="card" item-start><small>3</small></ion-icon>
+        </button> 3 nuevas facturas
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

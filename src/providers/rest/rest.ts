@@ -26,6 +26,7 @@ export class RestProvider {
   catch(e){
     console.log(e);
   }
+
   initProducts() {
     var products = [
   {

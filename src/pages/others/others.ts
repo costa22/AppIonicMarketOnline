@@ -19,5 +19,8 @@ export class OthersPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad OthersPage');
   }
-
+  goto($page){
+    console.log('go to '+$page);
+    this.navCtrl.push($page+'Page');
+  }
 }
