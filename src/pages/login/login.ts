@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from "../../models/user";
 import { RestProvider } from '../../providers/rest/rest';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -10,17 +11,22 @@ import { RestProvider } from '../../providers/rest/rest';
 })
 
 export class LoginPage {
-
 	user = {} as User;
 
   constructor(
   public navCtrl: NavController,
   public navParams: NavParams,
-  public auth: RestProvider) {
+  public auth: RestProvider,
+  private storage: Storage) {
   }
-  
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log('Vista LoginPage');
+  }
+
+  guess(){
+    this.storage.set('email', this.user.email);
+    this.navCtrl.push('HomePage');
   }
 
   loginaf(){
@@ -42,9 +48,5 @@ export class LoginPage {
       console.log(e);
     }
   }
-  guess(){
-    this.navCtrl.push('HomePage');
-  }
-
 
 }

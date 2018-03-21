@@ -3,11 +3,12 @@ import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { User } from "../../models/user";
 
+@IonicPage()
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-data',
+  templateUrl: 'data.html',
 })
-export class AboutPage {
+export class DataPage {
   user = {} as User;
 
   constructor(

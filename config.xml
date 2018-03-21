@@ -91,7 +91,8 @@
     <plugin name="cordova-plugin-camera" spec="^4.0.2" />
     <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
+    <plugin name="cordova-sqlite-storage" spec="^2.2.1" />
     <engine name="android" spec="7.0.0" />
     <engine name="ios" spec="4.5.4" />
-    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
 </widget>

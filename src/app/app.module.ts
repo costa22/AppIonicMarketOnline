@@ -12,6 +12,7 @@ import { ModalPage } from '../pages/modal/modal';
 import { SlidePage } from '../pages/slide/slide';
 import { Camera } from '@ionic-native/camera';
 import { CallNumber } from '@ionic-native/call-number';
+import { IonicStorageModule } from '@ionic/storage';
 
 export const firebaseconfig = {
     apiKey: "AIzaSyDneLPJsdLkjXXNvWT7_wuL67vMNoKKPNs",
@@ -32,7 +33,8 @@ export const firebaseconfig = {
     IonicModule.forRoot(MyApp),
   	AngularFireModule.initializeApp(firebaseconfig),
   	AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

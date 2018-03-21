@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App, MenuController, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CallNumber } from '@ionic-native/call-number';
+import { User } from "../../models/user";
+import { Storage } from '@ionic/storage';
+import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,25 +13,50 @@ import { CallNumber } from '@ionic-native/call-number';
 })
 export class HomePage {
   image: string = null;
+  user = {} as User;
+
 
   constructor(public alertCtrl: AlertController,
   app: App, menu: MenuController,
   public navCtrl: NavController,
   public navParams: NavParams,
   private camera: Camera,
-  private callNumber: CallNumber
+  private callNumber: CallNumber,
+  private storage: Storage,
+  private toastCtrl: ToastController
   )
-
   {
-	menu.enable(true);
+    this.loadData();
+    this.presentToast();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    console.log('Vista HomePage');
   }
 
-  gotocall(){
-    this.callNumber.callNumber("18001010101", true)
+  presentToast() {
+    this.user.email = 'Adrian';
+  let toast = this.toastCtrl.create({
+    message: this.user.email+' Bienvenido',
+    duration: 3000,
+    position: 'bottom'
+  });
+
+  toast.onDidDismiss(() => {
+    console.log('Dismissed toast');
+  });
+
+  toast.present();
+}
+
+  loadData(){
+    this.storage.get('email').then((val) => {
+    this.user.email = val;
+    });
+  }
+
+  gotocall($number){
+    this.callNumber.callNumber($number, true)
     .then(() => console.log('Launched dialer!'))
     .catch(() => console.log('Error launching dialer'));
   }
