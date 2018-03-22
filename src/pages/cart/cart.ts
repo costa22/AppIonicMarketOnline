@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 import { AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -10,32 +11,48 @@ import { AlertController } from 'ionic-angular';
 })
 export class CartPage {
   products: any[];
-  users: any[] = [];
+
   constructor(
     public navCtrl: NavController,
     public restProvider: RestProvider,
     public alertCtrl: AlertController,
-    public rest: RestProvider
-  ) {
-    this.getUsersRandom();
-    this.products = rest.initProducts();
+    public rest: RestProvider,
+    private storage: Storage
+  ){
+    this.products= [];
+    this.loadData();
+  }
+  delete($product){
+    //Obtenemos
+    this.storage.get('cart').then((val) => {
+      if(val != null){
+        this.products = val;
+      }
+    console.log('Carrito DB :',this.products.length);
+    });
+    //Borramos
+
+    //Subimos
+    this.storage.set('cart',this.products);
+    console.log('Carrito Final :',this.products.length);
+    this.loadData();
   }
 
-  getUsersRandom(){
-    this.restProvider.getUsersRandom()
-    .subscribe(
-      (data) => {
-        this.users = data['results'];
-        console.log(this.users)
-      },
-      (error) =>{ console.error(error); }
-    )
+  deleteall(){
+    this.storage.remove('cart');
+    this.loadData();
   }
 
-  //Numeros aleatorios
-getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+  loadData(){
+    this.storage.get('cart').then((val) => {
+      if(val != null){
+        this.products = val;
+
+      }else{
+        this.products= [];
+      }
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');

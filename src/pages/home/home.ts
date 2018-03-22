@@ -4,7 +4,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CallNumber } from '@ionic-native/call-number';
 import { User } from "../../models/user";
 import { Storage } from '@ionic/storage';
-import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,39 +14,21 @@ export class HomePage {
   image: string = null;
   user = {} as User;
 
-
   constructor(public alertCtrl: AlertController,
   app: App, menu: MenuController,
   public navCtrl: NavController,
   public navParams: NavParams,
   private camera: Camera,
   private callNumber: CallNumber,
-  private storage: Storage,
-  private toastCtrl: ToastController
+  private storage: Storage
   )
   {
     this.loadData();
-    this.presentToast();
   }
 
   ionViewDidLoad() {
-    console.log('Vista HomePage');
+    //console.log('Vista HomePage');
   }
-
-  presentToast() {
-    this.user.email = 'Adrian';
-  let toast = this.toastCtrl.create({
-    message: this.user.email+' Bienvenido',
-    duration: 3000,
-    position: 'bottom'
-  });
-
-  toast.onDidDismiss(() => {
-    console.log('Dismissed toast');
-  });
-
-  toast.present();
-}
 
   loadData(){
     this.storage.get('email').then((val) => {
@@ -58,7 +39,7 @@ export class HomePage {
   gotocall($number){
     this.callNumber.callNumber($number, true)
     .then(() => console.log('Launched dialer!'))
-    .catch(() => console.log('Error launching dialer'));
+    .catch(() => console.log('Error al llamar'));
   }
 
   doAlert() {
@@ -80,8 +61,8 @@ export class HomePage {
   getPicture(){
     let options: CameraOptions = {
       destinationType: this.camera.DestinationType.DATA_URL,
-      targetWidth: 1000,
-      targetHeight: 1000,
+      targetWidth: 500,
+      targetHeight: 500,
       quality: 100
     }
     this.camera.getPicture( options )

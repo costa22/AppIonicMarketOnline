@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { ModalPage } from '../modal/modal';
 import { SlidePage } from '../slide/slide';
 import { RestProvider } from '../../providers/rest/rest';
+import { Storage } from '@ionic/storage';
 
 
 @IonicPage()
@@ -13,11 +14,15 @@ import { RestProvider } from '../../providers/rest/rest';
 export class ProductsPage {
   jsonGlobal: any[];
   jsonFiltrar: any[];
+  cart: any[] = [];
+  product: {};
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public modalCtrl: ModalController,
-    public rest: RestProvider
+    public rest: RestProvider,
+    private storage: Storage
   ){
    this.jsonGlobal = rest.initProducts();
    this.jsonFiltrar = this.jsonGlobal;
@@ -25,6 +30,22 @@ export class ProductsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductsPage');
+    console.log('Carrito Inicial: ',this.cart.length);
+  }
+
+  addCart($product){
+    //Obtenemos
+    this.storage.get('cart').then((val) => {
+      if(val != null){
+        this.cart = val;
+      }
+    console.log('Carrito DB :',this.cart.length);
+    });
+    //Añadimos
+    this.cart.push($product);
+    //Subimos
+    this.storage.set('cart',this.cart);
+    console.log('Carrito Final :',this.cart.length);
   }
 
   getproducts(ev) {

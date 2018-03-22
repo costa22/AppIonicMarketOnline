@@ -42,8 +42,8 @@
       </button>
     </ion-col>
 	  <ion-col col-6>
-  		<button block ion-button color="primary" round large>
-  		<ion-icon name="clipboard" item-start (click)="goto('Lists')"></ion-icon>
+  		<button block ion-button color="primary" round large (click)="goto('Lists')">
+  		<ion-icon name="clipboard" item-start ></ion-icon>
       <ion-card-content>
         Listas
       </ion-card-content>
@@ -82,9 +82,9 @@
           </button>
         </ion-col>
         <ion-col col-3>
-          <button ion-button outline color="secondary" round (click)="gotocall('0000')">
+          <button ion-button outline (click)="gotocall('+34000')" color="secondary" round>
              <ion-icon name="call" color="primary" item-start></ion-icon>
-        </button>
+          </button>
         </ion-col>
       </ion-row>
     </ion-grid>
