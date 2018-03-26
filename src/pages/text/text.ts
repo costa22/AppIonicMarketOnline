@@ -13,24 +13,24 @@ export class TextPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private storage: Storage) {
+    private storage: Storage)
+    {
       this.loadData();
-  }
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TextPage');
   }
   addMsg(){
-    //Obtenemos
     this.storage.get('text').then((val) => {
       if(val != null){
         this.text = val;
       }
     });
-    //Añadimos
     this.text.push(this.msg);
-    //Subimos
     this.storage.set('text',this.text);
+    this.msg = "";
+    this.loadData();
   }
 
   loadData(){

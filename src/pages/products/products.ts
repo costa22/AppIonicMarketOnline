@@ -30,7 +30,7 @@ export class ProductsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductsPage');
-    console.log('Carrito Inicial: ',this.cart.length);
+    console.log('carga page: ',this.cart.length);
   }
 
   addCart($product){
@@ -39,13 +39,14 @@ export class ProductsPage {
       if(val != null){
         this.cart = val;
       }
-    console.log('Carrito DB :',this.cart.length);
     });
+    console.log('get :',this.cart.length);
     //Añadimos
     this.cart.push($product);
     //Subimos
     this.storage.set('cart',this.cart);
-    console.log('Carrito Final :',this.cart.length);
+    console.log('set :',this.cart.length);
+    console.log('Cart :',this.cart);
   }
 
   getproducts(ev) {

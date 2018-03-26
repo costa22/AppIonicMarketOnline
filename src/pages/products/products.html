@@ -1,9 +1,12 @@
 <ion-header>
 
   <ion-navbar color="primary">
+    <button icon-only menuToggle block round color="primary" ion-button outline>
+      <ion-icon color="secondary" name="menu" item-start></ion-icon>
+    </button>
     <ion-toolbar>
       <ion-title>
-        Total productos
+        <ion-searchbar (ionInput)="getproducts($event)" ></ion-searchbar>
       </ion-title>
       <ion-buttons start>
         <button ion-button (click)="gotoproducts()">
@@ -12,7 +15,7 @@
         </button>
       </ion-buttons>
     </ion-toolbar>
-    <ion-searchbar (ionInput)="getproducts($event)" ></ion-searchbar>
+
   </ion-navbar>
 
 </ion-header>

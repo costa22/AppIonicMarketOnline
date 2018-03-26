@@ -1,1 +1,27 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+
+  <ion-toolbar>
+    <ion-title>
+      <div float-left>
+        Easy Sales
+      </div>
+      <div float-right>
+        <button menuClose block round color="primary" ion-button outline>
+  			<ion-icon color="primary" name="cart" item-start (click)="goto('CartPage')"></ion-icon>
+        </button>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-content>
+    <ion-list>
+      <button outline block round menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon color="primary" item-left name="{{p.icon}}"></ion-icon>
+        {{p.titulo}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

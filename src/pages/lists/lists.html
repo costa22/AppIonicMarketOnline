@@ -1,6 +1,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button icon-only menuToggle block round color="primary" ion-button outline>
+    <ion-icon color="primary" name="menu" item-start></ion-icon>
+    </button>
     <ion-title>
 			Lista
 	</ion-title>
@@ -9,7 +12,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+    <button ion-item *ngFor="let item of lists" (click)="itemSelected(item)">
       {{ item }}
       <small text-right style="color: #CCC">12 artículos ||  </small>
       <small text-right style="color: #CCC">2 Feb 2018</small>
@@ -18,7 +21,8 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button block>
+    <ion-input type="text" [(ngModel)]="inputtext" placeholder="Escriba aquí su nueva lista"floating></ion-input>
+    <button ion-button block (click)="addMsg()">
       Añadir lista
     </button>
   </ion-toolbar>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -7,17 +8,38 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'lists.html'
 })
 export class ListsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  inputtext: string;
+  lists: any[] = [];
+  msg: string;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private storage: Storage) {
+      this.loadData();
 }
-  items = [
-    'Pedido Viernes',
-    'Gatos',
-    'Black Friday',
-    '05/02/2018',
-    'Promoción Camas',
-	  'Promoción Web'
-  ];
+
+addMsg(){
+  this.storage.get('lists').then((val) => {
+    if(val != null){
+      this.lists = val;
+    }
+  });
+  this.lists.push(this.inputtext);
+  this.storage.set('lists',this.lists);
+  this.msg = "";
+  this.loadData();
+}
+
+loadData(){
+  this.storage.get('lists').then((val) => {
+    if(val != null){
+      this.lists = val;
+
+    }else{
+      this.lists= [];
+    }
+  });
+}
 
   itemSelected(item: string) {
     console.log("Selected Item", item);

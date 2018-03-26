@@ -22,21 +22,6 @@ export class CartPage {
     this.products= [];
     this.loadData();
   }
-  delete($product){
-    //Obtenemos
-    this.storage.get('cart').then((val) => {
-      if(val != null){
-        this.products = val;
-      }
-    console.log('Carrito DB :',this.products.length);
-    });
-    //Borramos
-
-    //Subimos
-    this.storage.set('cart',this.products);
-    console.log('Carrito Final :',this.products.length);
-    this.loadData();
-  }
 
   deleteall(){
     this.storage.remove('cart');
@@ -47,7 +32,6 @@ export class CartPage {
     this.storage.get('cart').then((val) => {
       if(val != null){
         this.products = val;
-
       }else{
         this.products= [];
       }
