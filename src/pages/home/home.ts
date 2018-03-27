@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App, MenuController, AlertController } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, NavParams, App, MenuController, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CallNumber } from '@ionic-native/call-number';
 import { User } from "../../models/user";
 import { Storage } from '@ionic/storage';
+import { SearchPage } from '../search/search';
 
 @IonicPage()
 @Component({
@@ -13,6 +14,8 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
   image: string = null;
   user = {} as User;
+  inputtext: string;
+  public isSearchbarOpened = false;
 
   constructor(public alertCtrl: AlertController,
   app: App, menu: MenuController,
@@ -20,7 +23,8 @@ export class HomePage {
   public navParams: NavParams,
   private camera: Camera,
   private callNumber: CallNumber,
-  private storage: Storage
+  private storage: Storage,
+  private modalCtrl : ModalController
   )
   {
     this.loadData();
@@ -29,6 +33,16 @@ export class HomePage {
   ionViewDidLoad() {
     //console.log('Vista HomePage');
   }
+
+  search(){
+    this.storage.set('searchbyuser',this.inputtext);
+    this.navCtrl.push('SearchPage');
+  }
+
+  onSearch(event){
+    console.log(event.target.value);
+  }
+
 
   loadData(){
     this.storage.get('email').then((val) => {

@@ -11,7 +11,6 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   public rootPage: any;
   public pages: Array<{ titulo: string, component: any, icon: string }>;
-  public subpages: Array<{ titulo: string, component: any, page: string }>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen)
   {
@@ -33,12 +32,6 @@ export class MyApp {
       { titulo: 'Ajustes', component: 'NotificationsPage', icon: 'build'},
       { titulo: 'Más opciones', component: 'OthersPage', icon: 'add'}
     ];
-    this.subpages = [
-      { titulo: 'Submenu1', component: 'HomePage', page: 'HomePage' },
-      { titulo: 'Submenu2', component: 'CartPage', page: 'Cartpage' },
-      { titulo: 'Submenu3', component: 'OffersPage', page: 'CartPage'},
-      { titulo: 'Submenu4', component: 'ProductPage', page: 'CartPage'},
-    ];
 
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -49,8 +42,8 @@ export class MyApp {
   openPage(page) {
     this.nav.setRoot(page.component);
   }
-  goto(page){
-    this.nav.setRoot(page);
+  goto($page){
+    this.nav.setRoot($page);
   }
 
 }

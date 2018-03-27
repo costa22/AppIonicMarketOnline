@@ -26,7 +26,7 @@ export class LoginPage {
 
   guess(){
     this.storage.set('email', this.user.email);
-    this.navCtrl.push('HomePage');
+    this.navCtrl.setRoot('HomePage');
   }
 
   loginaf(){
