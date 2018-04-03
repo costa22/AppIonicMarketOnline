@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController, NavController, NavParams, App, MenuController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, MenuController, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CallNumber } from '@ionic-native/call-number';
 import { User } from "../../models/user";
 import { Storage } from '@ionic/storage';
-import { SearchPage } from '../search/search';
 
 @IonicPage()
 @Component({
@@ -16,15 +15,14 @@ export class HomePage {
   user = {} as User;
   inputtext: string;
   public isSearchbarOpened = false;
-
+ 
   constructor(public alertCtrl: AlertController,
   app: App, menu: MenuController,
   public navCtrl: NavController,
   public navParams: NavParams,
   private camera: Camera,
   private callNumber: CallNumber,
-  private storage: Storage,
-  private modalCtrl : ModalController
+  private storage: Storage
   )
   {
     this.loadData();
